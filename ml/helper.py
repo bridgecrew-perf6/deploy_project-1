@@ -150,7 +150,7 @@ def inference(model, X):
         Data used for prediction.
     Returns
     -------
-    preds : np.array
+    preds : np.arrays
         Predictions from the model.
     """
 

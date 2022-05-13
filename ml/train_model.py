@@ -8,24 +8,29 @@ from joblib import dump
 from helper import process_data, train_model, get_categorical_features
 # Add the necessary imports for the starter code.
 
-# Add code to load in the data.
-data = pd.read_csv('data/clean/census.csv')
+def train():
 
-# Optional enhancement, use K-fold cross validation instead of a train-test split.
+    # Add code to load in the data.
+    data = pd.read_csv('data/clean/census.csv')
 
-train, test = train_test_split(data, test_size=0.2)
+    # Optional enhancement, use K-fold cross validation instead of a train-test split.
 
-cat_features = get_categorical_features()
+    train, _ = train_test_split(data, test_size=0.2, random_state=42)
 
-# Proces the test data with the process_data function.
+    cat_features = get_categorical_features()
 
-X_train, y_train, encoder, lb = process_data(
-    train, categorical_features=cat_features, label='salary', training=True\
-)
+    # Proces the test data with the process_data function.
 
-# Train and save a model.
-trained_model = train_model(X_train, y_train)
+    X_train, y_train, encoder, lb = process_data(
+        train, 
+        categorical_features=cat_features, 
+        label='salary', 
+        training=True
+    )
 
-dump(trained_model, "data/model/model.joblib")
-dump(encoder, "data/model/encoder.joblib")
-dump(lb, "data/model/lb.joblib")
+    # Train and save a model.
+    trained_model = train_model(X_train, y_train)
+
+    dump(trained_model, "data/model/model.joblib")
+    dump(encoder, "data/model/encoder.joblib")
+    dump(lb, "data/model/lb.joblib")
