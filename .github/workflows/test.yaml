@@ -35,8 +35,5 @@ jobs:
       - name: Pull data from DVC
         run: dvc pull data -R
         
-      - name: Run Flake8
-        run: flake8
-        
       - name: Run pytest
         run: pytest
