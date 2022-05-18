@@ -16,7 +16,7 @@ def go(args):
 
     if args.action == "all" or args.action == "train model":
         logging.info("Train model procedure started")
-        train_model.train()
+        train_model.train
 
     if args.action == "all" or args.action == "evaluate model":
         logging.info("Evaluation procedure started")
