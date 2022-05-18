@@ -43,4 +43,5 @@ if __name__ == "__main__":
     main_args = parser.parse_args()
 
     go(main_args)
+    print('s')
     
