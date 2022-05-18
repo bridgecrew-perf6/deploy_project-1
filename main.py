@@ -4,6 +4,7 @@ import ml.eval_model as eval_model
 import ml.clean_data as clean_data
 import logging
 
+
 def go(args):
     """
     Execute ml pipeline
@@ -35,7 +36,7 @@ if __name__ == "__main__":
             "train model",
             "evaluate model",
             "all"
-            ],
+        ],
         default="all",
         help="Pipeline action"
     )
@@ -43,4 +44,3 @@ if __name__ == "__main__":
     main_args = parser.parse_args()
 
     go(main_args)
-    

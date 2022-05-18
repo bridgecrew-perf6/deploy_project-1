@@ -11,8 +11,12 @@ from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
 
 def process_data(
-    X, categorical_features=[], label=None, training=True, encoder=None, lb=None
-):
+        X,
+        categorical_features=[],
+        label=None,
+        training=True,
+        encoder=None,
+        lb=None):
     """ Process the data used in the machine learning pipeline.
 
     Processes the data using one hot encoding for the categorical features and a
@@ -91,7 +95,8 @@ def get_categorical_features():
     ]
 
     return cat_features
-    
+
+
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -116,6 +121,7 @@ def train_model(X_train, y_train):
     logging.info('Accuracy: %.3f (%.3f)' % (mean(scores), std(scores)))
     return model
 
+
 def compute_model_metrics(y, preds):
     """
     Validates the trained machine learning model using precision, recall, and F1.
@@ -138,6 +144,7 @@ def compute_model_metrics(y, preds):
     recall = recall_score(y, preds, zero_division=1)
 
     return precision, recall, fbeta
+
 
 def inference(model, X):
     """ Run model inferences and return the predictions.

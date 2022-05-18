@@ -4,6 +4,7 @@ from joblib import load
 from ml.helper import get_categorical_features, process_data, compute_model_metrics
 import logging
 
+
 def evaluate_model():
     df = pd.read_csv("data/clean/census.csv")
     _, test = train_test_split(df, test_size=0.2, random_state=42)

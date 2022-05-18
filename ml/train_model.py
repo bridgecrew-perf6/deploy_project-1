@@ -6,12 +6,14 @@ from joblib import dump
 from ml.helper import process_data, train_model, get_categorical_features
 # Add the necessary imports for the starter code.
 
+
 def train():
 
     # Add code to load in the data.
     data = pd.read_csv('data/clean/census.csv')
 
-    # Optional enhancement, use K-fold cross validation instead of a train-test split.
+    # Optional enhancement, use K-fold cross validation instead of a
+    # train-test split.
 
     train, _ = train_test_split(data, test_size=0.2, random_state=42)
 
@@ -20,9 +22,9 @@ def train():
     # Proces the test data with the process_data function.
 
     X_train, y_train, encoder, lb = process_data(
-        train, 
-        categorical_features=cat_features, 
-        label='salary', 
+        train,
+        categorical_features=cat_features,
+        label='salary',
         training=True
     )
 
