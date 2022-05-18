@@ -9,7 +9,7 @@ def evaluate_model():
     _, test = train_test_split(df, test_size=0.2, random_state=42)
 
     trained_model = load("data/model/model.joblib")
-    encoder = load("data/model/encoder/joblib")
+    encoder = load("data/model/encoder.joblib")
     lb = load("data/model/lb.joblib")
 
     slice_values = []

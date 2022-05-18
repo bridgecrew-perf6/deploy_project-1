@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import pytest
-from ml.helper import process_data, get_categorical_features, inference
+from helper import process_data, get_categorical_features, inference
 from joblib import load
 
 @pytest.fixture
@@ -54,10 +54,10 @@ def test_inference_above():
 
     model = load("data/model/model.joblib")
     encoder = load("data/model/encoder.joblib")
-    lb = load("data/model/joblib")
+    lb = load("data/model/lb.joblib")
 
     array = np.array([[
-                35,
+                40,
                 "Private",
                 "Some-college",
                 "Married-civ-spouse",
@@ -92,7 +92,7 @@ def test_inference_above():
 
     pred = inference(model, X)
     y = lb.inverse_transform(pred)[0]
-    assert y == ">50k"
+    assert y == ">50K"
 
 def test_inference_below():
     """
@@ -131,6 +131,7 @@ def test_inference_below():
                 df_temp,
                 categorical_features=get_categorical_features(),
                 encoder=encoder, lb=lb, training=False)
+                
     pred = inference(model, X)
     y = lb.inverse_transform(pred)[0]
     assert y == "<=50K"

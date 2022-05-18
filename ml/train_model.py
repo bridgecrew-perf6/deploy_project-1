@@ -1,11 +1,9 @@
 import sys
 
-from ml.helper import get_categorical_features
-
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from joblib import dump
-from helper import process_data, train_model, get_categorical_features
+from ml.helper import process_data, train_model, get_categorical_features
 # Add the necessary imports for the starter code.
 
 def train():
