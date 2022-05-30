@@ -11,7 +11,7 @@ import numpy as np
 class User(BaseModel):
     age: int
     workclass: Literal[
-        'State-gov', 'Self-emp-not-inc', 'Private', 'Federal-gov',
+        'Private', 'State-gov', 'Self-emp-not-inc', 'Federal-gov',
         'Local-gov', 'Self-emp-inc', 'Without-pay']
     education: Literal[
         'Bachelors', 'HS-grad', '11th', 'Masters', '9th',
@@ -19,17 +19,17 @@ class User(BaseModel):
         'Assoc-acdm', '7th-8th', 'Doctorate', 'Assoc-voc', 'Prof-school',
         '5th-6th', '10th', 'Preschool', '12th', '1st-4th']
     maritalStatus: Literal[
-        'Never-married', 'Married-civ-spouse', 'Divorced',
+        'Married-civ-spouse', 'Never-married', 'Divorced',
         'Married-spouse-absent', 'Separated', 'Married-AF-spouse',
         'Widowed']
     occupation: Literal[
-        'Adm-clerical', 'Exec-managerial', 'Handlers-cleaners',
+        'Exec-managerial', 'Adm-clerical', 'Handlers-cleaners',
         'Prof-specialty', 'Other-service', 'Sales', 'Transport-moving',
         'Farming-fishing', 'Machine-op-inspct', 'Tech-support',
         'Craft-repair', 'Protective-serv', 'Armed-Forces',
         'Priv-house-serv']
     relationship: Literal[
-        'Not-in-family', 'Husband', 'Wife', 'Own-child',
+        'Husband', 'Not-in-family', 'Wife', 'Own-child',
         'Unmarried', 'Other-relative']
     race: Literal[
         'White', 'Black', 'Asian-Pac-Islander', 'Amer-Indian-Eskimo',
