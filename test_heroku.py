@@ -2,9 +2,11 @@
 Heroku Api test script
 """
 import requests
+import pytest
 
-
-data = {
+@pytest.fixture
+def test_heroku_app():
+    data = {
     "age": 32,
     "workclass": "Private",
     "education": "Some-college",
@@ -16,9 +18,10 @@ data = {
     "hoursPerWeek": 60,
     "nativeCountry": "United-States"
     }
-r = requests.post('https://udacity-deploy.herokuapp.com/', json=data)
 
-assert r.status_code == 200
+    r = requests.post('https://udacity-deploy.herokuapp.com/', json=data)
 
-print("Response code: %s" % r.status_code)
-print("Response body: %s" % r.json())
+    assert r.status_code == 200
+
+    print("Response code: %s" % r.status_code)
+    print("Response body: %s" % r.json())
