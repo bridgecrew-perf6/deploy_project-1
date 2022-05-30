@@ -3,6 +3,7 @@ import ml.train_model as train_model
 import ml.eval_model as eval_model
 import ml.clean_data as clean_data
 import logging
+import os
 
 
 def go(args):
