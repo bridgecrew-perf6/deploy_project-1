@@ -5,6 +5,7 @@ import pytest
 from fastapi.testclient import TestClient
 from api import app
 
+
 @pytest.fixture
 def client():
     """
@@ -13,14 +14,17 @@ def client():
     api_client = TestClient(app)
     return api_client
 
+
 def test_get(client):
     r = client.get("/")
     assert r.status_code == 200
     assert r.json() == {"message": "Welcome"}
 
+
 def test_get_malformed(client):
     r = client.get("/wrong_url")
     assert r.status_code != 200
+
 
 def test_post_above(client):
     r = client.post("/", json={
@@ -37,6 +41,7 @@ def test_post_above(client):
     })
     assert r.status_code == 200
     assert r.json() == {"prediction": ">50K"}
+
 
 def test_post_below(client):
     r = client.post("/", json={

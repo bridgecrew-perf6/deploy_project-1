@@ -8,6 +8,7 @@ import ml.helper
 from pandas.core.frame import DataFrame
 import numpy as np
 
+
 class User(BaseModel):
     age: int
     workclass: Literal[
@@ -57,9 +58,11 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
 
 app = FastAPI()
 
+
 @app.get("/")
 async def get_items():
     return {"message": "Welcome"}
+
 
 @app.post("/")
 async def inference(user_data: User):
@@ -92,7 +95,6 @@ async def inference(user_data: User):
         "hours-per-week",
         "native-country",
     ])
-
 
     X, _, _, _ = ml.helper.process_data(
         df_temp,
