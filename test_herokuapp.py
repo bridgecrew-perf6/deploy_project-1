@@ -5,7 +5,7 @@ import requests
 import pytest
 
 @pytest.fixture
-def test_heroku_app():
+def test_herokuapp():
     data = {
     "age": 32,
     "workclass": "Private",
@@ -22,6 +22,4 @@ def test_heroku_app():
     r = requests.post('https://udacity-deploy.herokuapp.com/', json=data)
 
     assert r.status_code == 200
-
-    print("Response code: %s" % r.status_code)
-    print("Response body: %s" % r.json())
+    assert r.json() == {"prediction": ">50K"}
