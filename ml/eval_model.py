@@ -1,7 +1,8 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from joblib import load
-from ml.helper import get_categorical_features, process_data, compute_model_metrics
+from ml.helper import get_categorical_features, process_data
+from ml.helper import compute_model_metrics
 import logging
 
 
