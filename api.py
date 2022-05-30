@@ -1,4 +1,3 @@
-from json import encoder
 import os
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -70,7 +69,6 @@ async def inference(user_data: User):
     encoder = load("data/model/encoder.joblib")
     lb = load("data/model/lb.joblib")
 
-    print(encoder)
     array = np.array([[
                      user_data.age,
                      user_data.workclass,
