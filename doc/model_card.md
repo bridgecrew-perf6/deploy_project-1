@@ -21,14 +21,9 @@ Data is coming from https://archive.ics.uci.edu/ml/datasets/census+income ; eval
 
 ## Metrics
 
-The model was evaluated using Accuracy score. The value is around 0.834.
+The model was evaluated using Accuracy score. The mean crossval score is 0.834 with 0.008 std dev.
 
 ## Ethical Considerations
 
 Dataset contains data related race, gender and origin country. This will drive to a model that may potentially discriminate people; 
 further investigation before using it should be done.
-
-## Caveats and Recommendations
-
-Given gender classes are binary (male/not male), which we include as male/female. Further work needed to evaluate across a
-spectrum of genders.
